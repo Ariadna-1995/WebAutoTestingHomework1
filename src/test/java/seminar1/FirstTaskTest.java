@@ -14,18 +14,9 @@ import java.io.File;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
-public class FirstTaskTest {
-    WebDriver driver;
-    String log = "GB202307470f719";
-    String pass = "b9a870f47f";
-    @BeforeEach
-    void init() {
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--start-maximized"); // режим полного экрана
-        driver = new ChromeDriver(chromeOptions);
-        driver.get("https://test-stand.gb.ru/login");
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    }
+
+public class FirstTaskTest extends AbstractTest {
+
     @Test
     void CheckDummyTitleTest() throws InterruptedException{
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
@@ -57,8 +48,5 @@ public class FirstTaskTest {
             e.printStackTrace();
         }
     }
-    @AfterEach
-    void close() {
-        driver.quit();
-    }
+
 }
