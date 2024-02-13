@@ -22,7 +22,7 @@ public class DummyTestS3 extends AbstractTestS3 {
     void dummyChangeNameTestS3() {
 
         LoginPageS3 loginPageS3 = Selenide.page(LoginPageS3.class);
-        loginPageS3.loginInSystemS3("GB202306611b512", "a5c6730434");
+        loginPageS3.loginInSystemS3("GB202307470f719", "b9a870f47f");
 
         SelenideElement search = $x("//a[@href='/about']").shouldBe(visible);
         Assertions.assertEquals("About", search.text());
